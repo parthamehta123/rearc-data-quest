@@ -12,16 +12,46 @@ The following are notes/steps I took when exploring [rearc-data/quest](https://g
 
 ```json
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "AddPerm",
-      "Principal": "*",
-      "Effect": "Allow",
-      "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::data-quest-bucket/*"
-    }
-  ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AddPerm",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:ListBucket",
+            "Resource": "${module.s3_bucket.s3_bucket_arn}"
+        },
+        {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "${module.s3_bucket.s3_bucket_arn}/*"
+        },
+        {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": [
+                "s3:PutObject",
+                "s3:PutObjectTagging",
+                "s3:PutObjectAcl",
+                "s3:DeleteObject"
+            ],
+            "Resource": "${module.s3_bucket.s3_bucket_arn}/*"
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "*",
+            "Resource": "${module.s3_bucket.s3_bucket_arn}",
+            "Condition": {
+                "StringEquals": {
+                    "s3:DataAccessPointAccount": "803471918786"
+                }
+            }
+        }
+    ]
 }
 ```
 
