@@ -31,6 +31,4 @@ This is an exploration of [https://github.com/rearc-data/quest](https://github.c
 4. Set your own `access_key` and `secret_key` in a `terraform.tfvars` file within your local IaC directory. Any other variables from `variables.tf` can be customized in `terraform.tfvars` too. You can set a variable in `terraform.tfvars` using a line-by-line format like `access_key = "AW3JLRW29FJE4WP9A"`.
 5. Run `terraform plan` to view the possible changes, and `terraform apply -auto-approve` to automatically approve these changes and run the IaC.
 
-Note that some of these steps take some time for setup. The functions don't run automatically until the first daily event triggers, but you can test the functions on the AWS Management Console.
-
 When removing the infrastructure, making sure to empty the S3 bucket first otherwise it won't be destroyed.
