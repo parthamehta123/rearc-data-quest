@@ -1,6 +1,6 @@
 # Rearc Data Quest
 
-The following are notes/steps I took when exploring [rearc-data/quest](https://github.com/rearc-data/quest). Some of these notes may be over-detailed but were useful for my reference while exploring the data quest.
+The following are notes/steps I took when exploring [rearc-data/quest](https://github.com/rearc-data/quest).
 
 ## Part 1: AWS S3 & Sourcing Datasets
 
