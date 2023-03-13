@@ -28,7 +28,7 @@ The following are notes/steps I took when exploring [rearc-data/quest](https://g
 > 2. Script this process so the files in the S3 bucket are kept in sync with the source when data on the website is updated, added, or deleted.
 
 - Made a Python script `sync_data.py` to sync data source with S3 bucket.
-- Based on part 4 question 2, I would be running this script on a daily basis. Locally I would use [Windows Task Scheduler](https://www.geeksforgeeks.org/schedule-a-python-script-to-run-daily/).
+- Based on part 4 question 2, I would be running this script on a daily basis. (https://www.geeksforgeeks.org/schedule-a-python-script-to-run-daily/).
 - Set up a virtual environment to use packages:
   - `boto3`
   - `bs4`
@@ -67,7 +67,6 @@ Script logic:
 > 1. Create a script that will fetch data from [this API](https://datausa.io/api/data?drilldowns=Nation&measures=Population). You can read the documentation [here](https://datausa.io/about/api/)
 
 - Made a Python script `fetch_data.py` to fetch and upload API data to S3.
-- [Found a typo](https://github.com/DataUSA/datausa-site/pull/972) on the API page.
 
 > Save the result of this API call as a JSON file in S3.
 
@@ -113,7 +112,7 @@ Script logic:
 
 `data_analytics.ipynb` is located in the `part3` directory.
 
-## Part 4: Infrastructure as Code & Data Pipeline with AWS CDK
+## Part 4: Infrastructure as Code & Data Pipeline with AWS Terraform / AWS CDK / AWS CloudFormation
 
 - Before attempting this part, I went through the [ZTM Terraform course](https://zerotomastery.io/courses/learn-terraform-certification/) to learn more (i.e. using modules).
 - I also tried setting up the infrastructure within the AWS Management Console before attempting the IaC to base the code off of. This step involved referencing certain guides when encountering challenges such as:
