@@ -71,7 +71,7 @@ Script logic:
 
 > Save the result of this API call as a JSON file in S3.
 
-- Noticed that the `sync_data.py` script from part 1 would remove the JSON file in S3 since it doesn't exist on the first data source website, so I added an exception in `sync_data.py` for the object `population-data.json`.
+- Noticed that the `sync_data.py` script from part 1 would remove the JSON file in S3 since it doesn't exist on the first data source website, so I added an exception in `sync_data.py` for the object `population.json`.
 - Used packages `boto3` and `requests` to fetch the API data and upload it as a JSON file to S3.
 
 ## Part 3: Data Analytics
@@ -132,7 +132,7 @@ Script logic:
 
 ### Step 2
 
-- Set up an S3 event notification everytime `population-data.json` is updated/written to S3, which adds to an SQS queue. Followed [this reference in the Terraform Registry](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_notification#add-notification-configuration-to-sqs-queue).
+- Set up an S3 event notification everytime `population.json` is updated/written to S3, which adds to an SQS queue. Followed [this reference in the Terraform Registry](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_notification#add-notification-configuration-to-sqs-queue).
 
 ### Step 3
 
